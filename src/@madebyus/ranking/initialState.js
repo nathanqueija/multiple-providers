@@ -1,3 +1,3 @@
 export default {
-  color: 'green'
+  keywords: ['book', 'shelf', 'library', 'bookstore']
 };
