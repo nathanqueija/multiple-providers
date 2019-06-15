@@ -1,6 +1,6 @@
 import React from 'react';
 import Page from 'components/Page';
-import { Provider as RankingProvider } from '@sellics/ranking';
+import { Provider as RankingProvider } from '@madebyus/ranking';
 
 function App() {
   return (

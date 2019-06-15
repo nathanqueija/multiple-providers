@@ -1,5 +1,5 @@
 import React from 'react';
-import { Context as RankingContext } from '@sellics/ranking';
+import { Context as RankingContext } from '@madebyus/ranking';
 const SamplePage = () => {
   const { data, updateColor } = React.useContext(RankingContext);
 
