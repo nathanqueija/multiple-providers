@@ -17,11 +17,14 @@ const RankingStore = ({ children }) => {
     );
   };
 
-  const value = {
-    data: state,
-    updateColor,
-    updateColorAsync
-  };
+  const value = React.useMemo(
+    () => ({
+      data: state,
+      updateColor,
+      updateColorAsync
+    }),
+    [state]
+  );
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
 };
