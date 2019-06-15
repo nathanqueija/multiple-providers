@@ -10,12 +10,28 @@ const RankingStore = ({ children }) => {
 
   const updateColor = color => dispatch({ type: UPDATE_COLOR, payload: color });
 
+  const updateColorAsync = async color => {
+    await setTimeout(
+      () => dispatch({ type: UPDATE_COLOR, payload: color }),
+      2000
+    );
+  };
+
   const value = {
     data: state,
-    updateColor
+    updateColor,
+    updateColorAsync
   };
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
 };
+
+export function useRanking() {
+  const context = React.useContext(Context);
+  if (context === undefined) {
+    throw new Error('useRanking must be used within a RankingProvider');
+  }
+  return context;
+}
 
 export default RankingStore;

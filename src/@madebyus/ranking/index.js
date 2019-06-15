@@ -1,3 +1,3 @@
-import Provider, { Context } from './store';
+import Provider, { Context, useRanking } from './store';
 
-export { Provider, Context };
+export { Provider, Context, useRanking };

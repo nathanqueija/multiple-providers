@@ -1,7 +1,7 @@
 import React from 'react';
-import { Context as RankingContext } from '@madebyus/ranking';
+import { useRanking } from '@madebyus/ranking';
 const SamplePage = () => {
-  const { data, updateColor } = React.useContext(RankingContext);
+  const { data, updateColor, updateColorAsync } = useRanking();
 
   return (
     <div>
@@ -12,6 +12,9 @@ const SamplePage = () => {
       </button>
       <button onClick={() => updateColor('yellow')}>
         Change color to yellow
+      </button>
+      <button onClick={() => updateColorAsync('brown')}>
+        Change color to brown async
       </button>
     </div>
   );
