@@ -1,4 +1,4 @@
-import { UPDATE_COLOR } from './actionTypes';
+import { UPDATE_COLOR } from './actions';
 
 export default (state, action) => {
   const { type, payload } = action;

@@ -1,11 +1,11 @@
 import React from 'react';
 import { useRanking } from '@madebyus/ranking';
 const SamplePage = () => {
-  const { data, updateColor, updateColorAsync } = useRanking();
+  const { color, updateColor, updateColorAsync } = useRanking();
 
   return (
     <div>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      <pre>{JSON.stringify(color, null, 2)}</pre>
       <button onClick={() => updateColor('blue')}>Change color to blue</button>
       <button onClick={() => updateColor('green')}>
         Change color to green
