@@ -1,24 +1,23 @@
 import React from 'react';
-import RankingPage from 'components/RankingPage';
-import PpcPage from 'components/PpcPage';
-import { Provider as RankingProvider } from '@madebyus/ranking';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Todos from 'pages/Todos';
+import Counter from 'pages/Counter';
+import Mixed from 'pages/Mixed';
+import { Provider as RankingProvider } from '@madebyme/todos';
+import { Provider as CounterProvider } from '@madebyme/counter';
+import Nav from 'components/Nav';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 function App() {
   return (
     <RankingProvider>
-      <Router>
-        <ul>
-          <li>
-            <Link to={`/`}>Ranking</Link>
-          </li>
-          <li>
-            <Link to={`/ppc`}>PPC</Link>
-          </li>
-        </ul>
-        <Route path="/" exact component={RankingPage} />
-        <Route path="/ppc" component={PpcPage} />
-      </Router>
+      <CounterProvider>
+        <BrowserRouter>
+          <Nav />
+          <Route path="/" exact component={Todos} />
+          <Route path="/counter" component={Counter} />
+          <Route path="/todos-counter" component={Mixed} />
+        </BrowserRouter>
+      </CounterProvider>
     </RankingProvider>
   );
 }

@@ -1,11 +1,10 @@
 import React from 'react';
-import reducer from './reducer';
-import initialState from './initialState';
+import reducer, { initialState } from './reducer';
 import createActions from './actions';
 
-export const Context = React.createContext();
+const Context = React.createContext();
 
-const RankingStore = ({ children }) => {
+const TodosProvider = ({ children }) => {
   const [state, dispatch] = React.useReducer(reducer, initialState);
   const actions = createActions(state, dispatch);
 
@@ -20,12 +19,12 @@ const RankingStore = ({ children }) => {
   return <Context.Provider value={value}>{children}</Context.Provider>;
 };
 
-export function useRanking() {
+export function useTodos() {
   const context = React.useContext(Context);
   if (context === undefined) {
-    throw new Error('useRanking must be used within a RankingProvider');
+    throw new Error('useTodos must be used within a TodosProvider');
   }
   return context;
 }
 
-export default RankingStore;
+export default TodosProvider;
