@@ -21,9 +21,10 @@ const CounterProvider = ({ children }) => {
 
 export function useCounter() {
   const context = React.useContext(Context);
-  if (context === undefined) {
-    throw new Error('useCounter must be used within a CounterProvider');
-  }
+  if (!context)
+    throw new Error(
+      'You must use Counter Provider in order to consume this context.'
+    );
   return context;
 }
 

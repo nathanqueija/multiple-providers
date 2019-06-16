@@ -2,14 +2,14 @@ import React from 'react';
 import Todos from 'pages/Todos';
 import Counter from 'pages/Counter';
 import Mixed from 'pages/Mixed';
-import { Provider as RankingProvider } from '@madebyme/todos';
+import { Provider as TodosProvider } from '@madebyme/todos';
 import { Provider as CounterProvider } from '@madebyme/counter';
 import Nav from 'components/Nav';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <RankingProvider>
+    <TodosProvider>
       <CounterProvider>
         <BrowserRouter>
           <Nav />
@@ -18,7 +18,7 @@ function App() {
           <Route path="/todos-counter" component={Mixed} />
         </BrowserRouter>
       </CounterProvider>
-    </RankingProvider>
+    </TodosProvider>
   );
 }
 

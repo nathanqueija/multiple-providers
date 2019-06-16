@@ -21,9 +21,11 @@ const TodosProvider = ({ children }) => {
 
 export function useTodos() {
   const context = React.useContext(Context);
-  if (context === undefined) {
-    throw new Error('useTodos must be used within a TodosProvider');
-  }
+  if (!context)
+    throw new Error(
+      'You must use Todos Provider in order to consume this context.'
+    );
+
   return context;
 }
 
