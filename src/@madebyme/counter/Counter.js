@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCounter } from './provider';
+import { useCounter } from './context';
 import withStyle from './Counter.style';
 
 const Counter = ({ className }) => {

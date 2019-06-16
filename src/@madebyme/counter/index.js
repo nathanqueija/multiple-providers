@@ -1,4 +1,4 @@
-import Provider, { useCounter } from './provider';
+import Provider, { useCounter } from './context';
 import Counter from './Counter';
 
 export { Provider, useCounter };

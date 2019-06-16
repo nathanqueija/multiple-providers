@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTodos } from './provider';
+import { useTodos } from './context';
 import withStyle from './Todos.style';
 
 const Todos = ({ className }) => {
