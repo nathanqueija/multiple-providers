@@ -20,9 +20,10 @@ const DumbComponent = ({ children }) => {
 
 const States = styled.div`
   width: 90%;
-  margin: auto;
+  margin: 10px auto;
   display: flex;
   justify-content: center;
+  border: 2px dashed black;
 
   > * {
     border: 1px dashed black;
