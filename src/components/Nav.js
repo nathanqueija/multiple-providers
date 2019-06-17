@@ -46,7 +46,8 @@ const Menu = ({ location: { pathname } }) => {
   const routes = [
     { path: '/', label: 'Todos' },
     { path: '/counter', label: 'Counter' },
-    { path: '/todos-counter', label: 'Todos + Counter' }
+    { path: '/todos-counter', label: 'Todos + Counter' },
+    { path: '/rendering', label: 'Rendering' }
   ];
 
   return (
