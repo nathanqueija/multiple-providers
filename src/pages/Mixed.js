@@ -4,9 +4,8 @@ import Description from 'components/Description';
 import { useTodos } from '@madebyme/todos';
 import { useCounter } from '@madebyme/counter';
 const MixedPage = () => {
-  const todosState = useTodos();
-  const { addTodoAsync, removeLastTodo } = todosState;
-  const counterState = useCounter();
+  const [todosState, { addTodoAsync, removeLastTodo }] = useTodos();
+  const [counterState] = useCounter();
 
   const States = styled.div`
     width: 90%;

@@ -3,7 +3,7 @@ import { useCounter } from './context';
 import withStyle from './Counter.style';
 
 const Counter = ({ className }) => {
-  const { counter, increment, decrement } = useCounter();
+  const [{ counter }, { increment, decrement }] = useCounter();
 
   return (
     <div className={className}>

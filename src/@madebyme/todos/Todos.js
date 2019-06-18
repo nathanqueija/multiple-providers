@@ -3,7 +3,7 @@ import { useTodos } from './context';
 import withStyle from './Todos.style';
 
 const Todos = ({ className }) => {
-  const { todos, addTodo, removeTodo } = useTodos();
+  const [{ todos }, { addTodo, removeTodo }] = useTodos();
 
   const onSubmit = e => {
     e.preventDefault();
@@ -15,11 +15,11 @@ const Todos = ({ className }) => {
   return (
     <div className={className}>
       <form onSubmit={onSubmit}>
-        <label htmlFor="todo">Add new Todo:</label>
-        <input type="text" name="todo" />
+        <label htmlFor='todo'>Add new Todo:</label>
+        <input type='text' name='todo' />
       </form>
       {todos.map(({ id, text }) => (
-        <div className="todo" key={id}>
+        <div className='todo' key={id}>
           <span>{text}</span>
           <span onClick={() => removeTodo(id)}>X</span>
         </div>

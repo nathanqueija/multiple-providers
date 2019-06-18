@@ -41,9 +41,8 @@ const MixedContainer = styled.div`
   }
 `;
 const ComponentsThatConsumeContext = () => {
-  const todosState = useTodos();
-  const { addTodoAsync, removeLastTodo } = todosState;
-  const counterState = useCounter();
+  const [todosState, { addTodoAsync, removeLastTodo }] = useTodos();
+  const [counterState] = useCounter();
   return (
     <States>
       <div>
